@@ -498,18 +498,14 @@ Most tax-abuse scams follow a **time-based playbook**.
 ### Timeline Diagram (Mermaid)
 
 ```mermaid
-timeline
-    title Tax Abuse Attack Timeline
-    section Launch
-      Contract deployed : low tax, marketing push
-    section Accumulation
-      Investors buy : normal trading, low fees
-    section Trigger
-      Owner flips fee switch : sellTax set to 80–99%
-    section Harvest
-      Users try to sell : heavy losses to tax, dev wallet fills
-    section Exit
-      Dev exits : dumps funds or pulls liquidity, project dies
+flowchart TD
+    A([Launch<br/>Contract deployed<br/>low tax, marketing push])
+    B([Accumulation<br/>Investors buy<br/>normal trading, low fees])
+    C([Trigger<br/>Owner flips fee switch<br/>sellTax = 80–99%])
+    D([Harvest<br/>Users try to sell<br/>heavy tax loss])
+    E([Exit<br/>Dev exits<br/>project dies])
+
+    A --> B --> C --> D --> E
 
 ```
 
