@@ -479,7 +479,7 @@ Most tax-abuse scams follow a **time-based playbook**.
 
    * Owner calls `setSellFee(80)`
    * Or time-based logic automatically increases taxes
-   * Or trading conditions change (e.g., thresholds hit)
+   * Or trading conditions change (thresholds hit)
 
 4. **Harvest Phase**
 
@@ -519,32 +519,17 @@ Let’s model the damage.
 
 Assume:
 
-* Trade amount: ( A )
-* Tax rate (as fraction): ( t \in [0, 1] )
+<img width="264" height="56" alt="Screenshot 2025-11-22 at 14-34-29 Repo style analysis" src="https://github.com/user-attachments/assets/25257aed-b6e1-4529-8a10-6a5243fc6ec6" />
 
 Then:
 
-* Tax paid:
-  [
-  \text{TaxPaid} = A \cdot t
-  ]
-* Net amount received:
-  [
-  \text{Net} = A \cdot (1 - t)
-  ]
+<img width="825" height="145" alt="Screenshot 2025-11-22 at 14-35-15 Repo style analysis" src="https://github.com/user-attachments/assets/2221d43a-2046-439a-98f2-f0cca2494d44" />
 
 If tax is **applied only on sells**, a user who:
 
-* buys at price ( P_b ) with tax ( t_b )
-* sells at price ( P_s ) with tax ( t_s )
+<img width="229" height="58" alt="Screenshot 2025-11-22 at 14-33-45 Repo style analysis" src="https://github.com/user-attachments/assets/ac4453c2-39d0-4337-a266-43f2317882e0" />
 
-Effective capital after round-trip is:
-
-[
-C_{\text{final}} = C_{\text{initial}} \cdot (1 - t_b) \cdot \frac{P_s}{P_b} \cdot (1 - t_s)
-]
-
-Even if ( P_s \approx P_b ), high ( t_s ) → heavy loss.
+<img width="786" height="139" alt="Screenshot 2025-11-22 at 14-36-24 Repo style analysis" src="https://github.com/user-attachments/assets/1a7d063b-e0c2-45d8-8eba-11f6bf37eb44" />
 
 ---
 
@@ -552,18 +537,11 @@ Even if ( P_s \approx P_b ), high ( t_s ) → heavy loss.
 
 If a max-tx system forces a user to sell in ( n ) chunks, each with tax ( t ):
 
-* Let each sell be amount ( A_i )
-* Total sold: ( \sum A_i = A )
-
-Total received:
-
-[
-\sum A_i \cdot (1 - t) = A \cdot (1 - t)
-]
+<img width="773" height="143" alt="Screenshot 2025-11-22 at 14-38-05 Repo style analysis" src="https://github.com/user-attachments/assets/e55bf674-0235-42d3-a595-f6af92893f34" />
 
 So a flat tax is linear.
 
-But: if ( t ) increases with each sell or based on conditions, effective loss can be **super-linear** in practice.
+But: if t increases with each sell or based on conditions, effective loss can be **super-linear** in practice.
 
 Example:
 First sells: 10% tax.
@@ -578,17 +556,7 @@ If a token routes all fees to a dev wallet which then **sells** those tokens for
 * User sells pay tax → dev accumulates tokens
 * Dev’s sells further push price down → amplifies user loss
 
-The total extracted value ( E ) approximates:
-
-[
-E \approx \sum_{trades} A_i \cdot t_i \cdot P_i
-]
-
-Where:
-
-* ( A_i ) = trade size
-* ( t_i ) = tax rate
-* ( P_i ) = price at that time
+<img width="778" height="227" alt="Screenshot 2025-11-22 at 14-39-11 Repo style analysis" src="https://github.com/user-attachments/assets/2092dc6e-0444-4173-a2f5-4ea7e3c616d1" />
 
 High tax + many traders = huge economic drain.
 
@@ -712,7 +680,7 @@ The target label might be:
 You can bootstrap labels via:
 
 * manual auditing of a subset
-* rough heuristics (e.g., “sellTax > 50% → 1”)
+* rough heuristics (“sellTax > 50% → 1”)
 * public scam databases (if available)
 
 ---
@@ -721,15 +689,11 @@ You can bootstrap labels via:
 
 Model outputs:
 
-[
-p = P(\text{tax_abuse} \mid \text{features})
-]
+<img width="768" height="24" alt="Screenshot 2025-11-22 at 14-45-11 Repo style analysis" src="https://github.com/user-attachments/assets/73d5e797-0114-47da-a4dc-a8fef1f103f2" />
 
 Convert to human-friendly score:
 
-[
-\text{risk_score} = \lfloor 100 \cdot p \rceil
-]
+<img width="768" height="25" alt="Screenshot 2025-11-22 at 14-45-18 Repo style analysis" src="https://github.com/user-attachments/assets/7571bb74-464d-47d0-ac04-818b0693afa8" />
 
 Then bucket:
 
@@ -750,7 +714,7 @@ You can expose:
 To avoid “black box” fears, you can use SHAP values:
 
 * Show how each feature contributed to a contract’s risk score
-* E.g., bar charts showing:
+* bar charts showing:
 
   * `has_set_fee` +0.18
   * `has_trading_lock` +0.12
